@@ -1,36 +1,64 @@
 import os
+import time
+from selenium import webdriver
 from selenium import webdriver as webdriver
+from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.edge.service import Service
 from selenium.webdriver.edge.options import Options
+import webdriver_manager.chrome  # Agregado para la gestión del driver
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 
 
 def cargar_driver(sitio):
     # Inicializar el navegador
     global driver
     global espera
-    
+
+    # Configurar opciones del navegador Edge
     options = webdriver.EdgeOptions()
-    options.use_chromium = True
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option('useAutomationExtension', False)
     options.add_argument('--start-maximized')
     options.add_argument('--disable-extensions')
-    options.set_capability("ms:inPrivate", True)
-
     options.add_argument("--disable-notifications")
     options.add_argument("--disable-infobars")
     options.add_argument("--disable-popup-blocking")
+    options.add_argument("--disable-features=msServices,EdgeTranslate,EdgeCollections,EdgeShoppingAssistant")
+    options.add_argument("--no-first-run")
+    options.add_argument("--no-default-browser-check")
+    options.add_argument('--start-maximized')
+    options.add_argument('--disable-extensions')
+    options.set_capability("ms:inPrivate", False)
+    #options.add_argument("--disable-notifications")
+    #options.add_argument("--disable-infobars")
+    #options.add_argument("--disable-popup-blocking")
     options.add_argument("--disable-features=msServices")
     options.add_argument("--no-first-run")
     options.add_argument("--no-default-browser-check")
-
+    options.add_argument("--disable-features=msServices,EdgeTranslate")
+    options.add_argument("--disable-features=msServices,EdgeTranslate,EdgeCollections")
+    options.add_argument("--disable-features=msServices,EdgeTranslate,EdgeCollections,EdgeShoppingAssistant")
+    
+    # Configurar servicio del driver Edge
     driver_path = 'C:\\DriverEdge\\msedgedriver.exe'
     service = Service(driver_path)
-    driver = webdriver.Edge(service=service, options=options)
-    driver.get(sitio)
     
+    # Inicializar el driver Edge
+    driver = webdriver.Edge(service=service, options=options)
+    try:
+        driver.get(sitio)
+    except TimeoutException:
+        print("Tiempo de espera agotado al cargar la página.")  # Manejo de excepciones
+    
+    # Configurar espera
     espera = WebDriverWait(driver, 10)
+
 
 def ok_input():
     alert = driver.switch_to.alert
@@ -115,7 +143,12 @@ def Guardar_Num_Ticket(num_tk):
     return valor
 
 def Cerrar_Driver():
-    driver.close()
+    # Cierra el navegador
+    try:
+        driver.quit()
+    except WebDriverException:
+        time.sleep(2)
+        driver.quit()
 
 
 '''
