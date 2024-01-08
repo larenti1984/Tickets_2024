@@ -1,0 +1,5 @@
+https://www.youtube.com/watch?v=Vr9vl0qlggE
+
+pyinstaller --windowed --onefile --icon=./naruto_hoja.ico Ticket_Crear.py
+
+C:\Users\matias.larenti\AppData\Local\Programs\Python\Python39\Scripts\pyinstaller.exe --windowed --onefile --icon=./naruto_hoja.ico Ticket_Crear.py

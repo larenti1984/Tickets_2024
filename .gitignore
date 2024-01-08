@@ -1,0 +1,11 @@
+*.xlsx
+pyinstaller.exe
+/__pycache__/
+crear_tickets.xlsx
+muestra.md
+/*.xlsx
+/build
+/dist
+/.vs
+/crear_tickets.xlsx
+/tickets.pyproj
