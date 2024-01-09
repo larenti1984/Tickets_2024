@@ -49,8 +49,8 @@ while True:
     # click en ticket buscado
     codigo.d_ID("tblProdServ")
     
-    # click en Ticket
-    codigo.d_Xpatch("/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div/div/div[1]/div[1]/ul/li[3]/a[2]/em/span/span")
+    # click en Ticket Activities
+    codigo.d_Xpatch("//html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div/div/div[1]/div[1]/ul/li[2]/a[2]/em/span/span")
     
      # click en Aceptar
     codigo.d_ID("btnAccept")
