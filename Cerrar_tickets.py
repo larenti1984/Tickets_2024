@@ -63,12 +63,12 @@ while True:
     #codigo.d_Xpatch("/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[2]/td/form/table/tbody/tr[3]/td/table/tbody/tr/td/input[1]")
     codigo.d_ID("btnOK")
 
-    # click en Ticket
-    codigo.d_Xpatch("/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div/div/div[1]/div[1]/ul/li[3]/a[2]/em/span/span")
+    # click en Ticket activities 2 
+    codigo.d_Xpatch("/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div/div/div[1]/div[1]/ul/li[2]/a[2]/em/span/span")
 
     # Hours
     #codigo.d_I_text("1", "txtTicketHours")
-    codigo.d_SKcss_txt('1', 'input#txtTicketHours')
+    codigo.d_SKcss_txt('1', 'input#txtTicketTime')
 
 
     # Ticket Comment
@@ -79,7 +79,7 @@ while True:
     codigo.d_ID('btnAddTime')
 
     
-    # click en Ok pop Alert
+    # click en Ok pop Alert okkkkkk
     time.sleep(3)
     codigo.ok_input()
    
