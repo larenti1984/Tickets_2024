@@ -132,6 +132,7 @@ while True:
     codigo.d_ID_text(cell2_desc, 'txtDescription')
 
     # Seleccionar Save
+    #codigo.d_Xpatch("//td[contains(text(), 'Save')]")
     codigo.d_Xpatch('/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div[6]/div/div[2]/div/div/table/tbody/tr[9]/td/table/tbody/tr/td[2]/div/table/tbody/tr[2]/td[2]/em/button')
     
     sheet.cell(row=row, column=col3).value = codigo.Guardar_Num_Ticket(

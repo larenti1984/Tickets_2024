@@ -24,6 +24,7 @@ def cargar_driver(sitio):
     options = webdriver.EdgeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
+    # options.add_argument('--headless') # modo segundo plano / oculto
     options.add_argument('--start-maximized')
     options.add_argument('--disable-extensions')
     options.add_argument("--disable-notifications")
@@ -57,7 +58,7 @@ def cargar_driver(sitio):
         print("Tiempo de espera agotado al cargar la página.")  # Manejo de excepciones
     
     # Configurar espera
-    espera = WebDriverWait(driver, 10)
+    espera = WebDriverWait(driver, 40)
 
 
 def ok_input():
