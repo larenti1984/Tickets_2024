@@ -85,22 +85,32 @@ while True:
    
 
     # Click en Finalice
-    codigo.d_css_click('input#btnFinalize')
-    #codigo.d_Xpatch('/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div/div/div[2]/div/div/div/div/div/table/tbody/tr[5]/td[3]/input')
+    #codigo.d_css_click('input#btnFinalize')
+    codigo.d_Xpatch('/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div/div/div[2]/div/div/div/div/div/table/tbody/tr[5]/td[3]/input')
+                    
 
     
     # Ticket Type
     codigo.d_Xpatch('/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[3]/td/fieldset/table/tbody/tr[1]/td[2]/select/option[2]')
-
+                     
+    # Loading Channel
+    codigo.d_Xpatch('/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[3]/td/fieldset/table/tbody/tr[2]/td[2]/select/option[5]')
+    
     # Cause Type
-    codigo.d_Xpatch('/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[3]/td/fieldset/table/tbody/tr[2]/td[2]/select/option[2]')
+    codigo.d_Xpatch('/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[3]/td/fieldset/table/tbody/tr[3]/td[2]/select/option[2]')
+    
+    # Description
+    codigo.d_ID_text('.', 'txtComment')
+
+      
+
 
 
     # click en Finalice
-    codigo.d_Xpatch("/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[2]/td/form/table/tbody/tr[4]/td/div/div/div[2]/div/div[2]/div/div/div/table/tbody/tr[5]/td[3]/input")
+    #codigo.d_Xpatch("/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[2]/td/form/table/tbody/tr[4]/td/div/div/div[2]/div/div[2]/div/div/div/table/tbody/tr[5]/td[3]/input")
     
     # input con "Cerrado"
-    codigo.d_ID_text("Ticket Cerrado.-", 'txtComment')
+    #codigo.d_ID_text("Ticket Cerrado.-", 'txtComment')
     
      # click en Save
     codigo.d_Xpatch('/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/table/tbody/tr/td/input[1]')
