@@ -24,7 +24,7 @@ def cargar_driver(sitio):
     options = webdriver.EdgeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
-    # options.add_argument('--headless') # modo segundo plano / oculto
+    #options.add_argument('--headless') # modo segundo plano / oculto
     options.add_argument('--start-maximized')
     options.add_argument('--disable-extensions')
     options.add_argument("--disable-notifications")

@@ -80,7 +80,7 @@ while True:
 
     
     # click en Ok pop Alert okkkkkk
-    time.sleep(3)
+    time.sleep(10)
     codigo.ok_input()
    
 
@@ -97,7 +97,7 @@ while True:
 
 
     # click en Finalice
-    #codigo.d_Xpatch("/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[2]/td/form/table/tbody/tr[4]/td/div/div/div[2]/div/div[2]/div/div/div/table/tbody/tr[5]/td[3]/input")
+    codigo.d_Xpatch("/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[2]/td/form/table/tbody/tr[4]/td/div/div/div[2]/div/div[2]/div/div/div/table/tbody/tr[5]/td[3]/input")
     
     # input con "Cerrado"
     codigo.d_ID_text("Ticket Cerrado.-", 'txtComment')
