@@ -71,6 +71,7 @@ while True:
 
     # Seleccionar sub-categoria
     funciones = {
+        5: codigo.sel_FA,
         4: codigo.sel_net,
         3: codigo.sel_LS,
         2: codigo.sel_DC,
@@ -79,6 +80,7 @@ while True:
 
     # Seleccionar sub-categoria
     funciones = {
+        5: codigo.sel_FA,
         4: codigo.sel_net,
         3: codigo.sel_LS,
         2: codigo.sel_DC,
@@ -92,6 +94,7 @@ while True:
 # ok
     # Seleccionar Item Final
     funciones2 = {
+        5: codigo.sel_FA_final,
         4: codigo.sel_net_final,
         3: codigo.sel_LS3_final,
         2: codigo.sel_DC_final,

@@ -24,7 +24,7 @@ def cargar_driver(sitio):
     options = webdriver.EdgeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
-    #options.add_argument('--headless') # modo segundo plano / oculto
+    # options.add_argument('--headless') # modo segundo plano / oculto
     options.add_argument('--start-maximized')
     options.add_argument('--disable-extensions')
     options.add_argument("--disable-notifications")
@@ -36,9 +36,9 @@ def cargar_driver(sitio):
     options.add_argument('--start-maximized')
     options.add_argument('--disable-extensions')
     options.set_capability("ms:inPrivate", False)
-    #options.add_argument("--disable-notifications")
-    #options.add_argument("--disable-infobars")
-    #options.add_argument("--disable-popup-blocking")
+    options.add_argument("--disable-notifications")
+    options.add_argument("--disable-infobars")
+    options.add_argument("--disable-popup-blocking")
     options.add_argument("--disable-features=msServices")
     options.add_argument("--no-first-run")
     options.add_argument("--no-default-browser-check")
@@ -58,7 +58,7 @@ def cargar_driver(sitio):
         print("Tiempo de espera agotado al cargar la página.")  # Manejo de excepciones
     
     # Configurar espera
-    espera = WebDriverWait(driver, 40)
+    espera = WebDriverWait(driver, 60)
 
 
 def ok_input():
@@ -164,7 +164,9 @@ def sel_cat(num_cat):
         1: "/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div[2]/div/div[2]/div/div[1]/img",
         2: "/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div[2]/div/div[3]/div/div[1]/img",
         3: "/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div[2]/div/div[5]/div/div[1]/img",
-        4: "/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div[2]/div/div[6]/div/div[1]/img"
+        4: "/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div[2]/div/div[6]/div/div[1]/img",
+        # facilities
+        5: "/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div[1]/div/div/div/div/div/div/div[1]/div" 
     }
     index = categories.get(num_cat, "")
     return index, num_cat
@@ -269,6 +271,15 @@ def sel_DC_final(num_selec):
     index = categories.get(num_selec, "")
     return index, num_selec
 
+# 5 1 Facilities #########################
+def sel_FA(num_select):
+    categories = {
+        # Facilities
+        1: "/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div[2]/div/div[2]/div/div[1]/img"
+    }
+    index = categories.get(num_select, "")
+    return index, num_select
+
 #solo Local Support 3 / 3
 def sel_LS3_final(num_selec):
     categories = {
@@ -295,6 +306,14 @@ def sel_CA_final(num_selec):
     return index, num_selec
 
 # //span[contains(text(),"VPN")]
+
+# Unica opcion de Facilities
+def sel_FA_final(num_selec):
+    categories = {
+        1: '/html/body/table/tbody/tr[3]/td/table/tbody/tr/td[4]/table/tbody/tr[1]/td/table/tbody/tr[3]/td/form/table/tbody/tr[4]/td/div[3]/div/div[3]/div/div[1]/img',
+    }
+    index = categories.get(num_selec, "")
+    return index, num_selec
 
     '''
         21: '//span[contains(text(),"Access")]',
